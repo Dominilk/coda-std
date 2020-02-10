@@ -1,0 +1,10 @@
+package coda.io
+
+public interface Closeable {
+	
+	/**
+	 * Closes the closeable.
+	 */
+	public void close()
+	
+}

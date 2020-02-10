@@ -1,0 +1,13 @@
+package coda.io
+
+import coda.lang.Exception
+
+public class IOException extends Exception {
+	
+	/**
+	 * Creates an {@link IOException}.
+	 * @param message
+	 */
+	public IOException(string message) { super(message) }
+	
+}

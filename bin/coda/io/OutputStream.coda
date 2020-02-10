@@ -1,0 +1,29 @@
+package coda.io
+
+import coda.io.Closeable
+
+public interface OutputStream implements Closeable {
+	
+	/**
+	 * Writes the given byte into the {@link OutputStream}
+	 * @param b
+	 */
+	public void write(byte b)
+	
+	/**
+	 * Writes all bytes into the {@link OutputStream}.
+	 * @param bytes
+	 */
+	public default void write(array bytes) {
+		assert bytes.getTypeName() == "coda.lang.byte"
+		for(b : bytes) {
+			this.write(b)
+		}
+	}
+	
+	/**
+	 * Flushes the {@link OutputStream}.
+	 */
+	public void flush()
+	
+}

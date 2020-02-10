@@ -1,0 +1,14 @@
+package coda.lang
+
+import coda.io.IOInterface
+
+public class System {
+	
+	private static IOInterface standardIO = new IOInterface(null, null)
+			
+	/**
+	 * @return the std i/o.
+	 */
+	public static IOInterface getStandardIO() { return System.standardIO }
+
+}

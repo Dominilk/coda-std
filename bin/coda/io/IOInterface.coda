@@ -1,0 +1,43 @@
+package coda.io
+
+import coda.io.OutputStream
+import coda.io.InputStream
+
+public class IOInterface {
+	
+	private OutputStream outputStream = empty
+	private InputStream inputStream = empty
+	
+	/**
+	 * Creates an {@link IOInterface} with the given streams.
+	 * @param outputStream
+	 * @param inputStream
+	 */
+	public IOInterface(OutputStream outputStream, InputStream inputStream) {
+		this.outputStream = outputStream
+		this.inputStream = inputStream
+	}
+			
+	/**
+	 * @return the OuputStream of the interface.
+	 */
+	public OutputStream getOutputStream() { return this.outputStream }
+	
+	/**
+	 * Sets the {@link OutputStream} of the interface.
+	 * @param outputStream
+	 */
+	public void setOutputStream(OutputStream outputStream) { this.outputStream = outputStream }
+	
+	/**
+	 * @return the OuputStream of the interface.
+	 */
+	public InputStream getInputStream() { return this.inputStream }
+
+	/**
+	 * Sets the {@link InputStream} of the interface.
+	 * @param inputStream
+	 */
+	public void setInputStream(InputStream inputStream) { this.inputStream = inputStream }
+	
+}

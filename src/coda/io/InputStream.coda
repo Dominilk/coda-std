@@ -1,0 +1,26 @@
+package coda.io
+
+public interface InputStream {
+	
+	/**
+	 * Reads the next byte of the stream.
+	 * @return the read byte
+	 */
+	public byte read()
+	
+	/**
+	 * Reads all bytes of the stream.
+	 * @return all read bytes.
+	 */
+	public array readAll()
+	
+	/**
+	 * @return the amount of available bytes in the stream.S
+	 */
+	public int available()
+	
+	/**
+	 * Closes the {@link InputStream}
+	 */
+	public void close()
+}
