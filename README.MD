@@ -1,5 +1,5 @@
 # coda std libraries
-> IMPORTANT! This library has not been finished. It is still in development.
+> This library has not been finished yet. It is still in active development.
 
 This is the repository for the coda standard libraries. Coda is a
 programming language made by me and although it looks really similar to java
