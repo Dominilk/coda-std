@@ -24,6 +24,7 @@ public class Init {
 		final CodaClass system = (CodaClass) runtime.get(runtime, "coda").get(runtime, "lang").get(runtime, "System");
 		final CodaObject stdIO = system.getStaticElement(runtime.getGlobalScope(), "getStandardIO", Function.class).get().getContent();
 		stdIO.getElement(runtime.getGlobalScope(), "setOutputStream", Function.class, runtime.getType(runtime.getGlobalScope(), "coda.io.OutputStream")).get(new Value(IOUtil.toCodaOutputStream(runtime, System.out)));
+		stdIO.getElement(runtime.getGlobalScope(), "setInputStream", Function.class, runtime.getType(runtime.getGlobalScope(), "coda.io.InputStream")).get(new Value(IOUtil.toCodaInputStream(runtime, System.in)));
 	}
 	
 }

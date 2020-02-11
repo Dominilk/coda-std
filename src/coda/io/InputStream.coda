@@ -1,6 +1,10 @@
 package coda.io
 
-public interface InputStream {
+import java.lang.reflect.Array;
+
+import coda.io.Closeable
+
+public interface InputStream implements Closeable {
 	
 	/**
 	 * Reads the next byte of the stream.
@@ -12,15 +16,19 @@ public interface InputStream {
 	 * Reads all bytes of the stream.
 	 * @return all read bytes.
 	 */
-	public array readAll()
+	public default array readAll() {
+		array bytes = byte[this.available()]
+		
+		while(this.available() > 0) {
+			bytes.set(bytes.getLength() - (this.available()), this.read())
+		}
+		
+		return bytes
+	}
 	
 	/**
 	 * @return the amount of available bytes in the stream.S
 	 */
 	public int available()
 	
-	/**
-	 * Closes the {@link InputStream}
-	 */
-	public void close()
 }
