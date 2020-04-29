@@ -1,0 +1,12 @@
+package coda.util
+
+public class Random {
+	
+	/**
+	 * Generates & returns a simple random within the given range.
+	 * @param min
+	 * @param max
+	 */
+	public static native int simple(int min, int max)
+	
+}

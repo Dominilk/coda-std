@@ -11,10 +11,15 @@ public class System {
 	private static Console console = new Console(null, null)
 			
 	/**
-	 * @return the std i/o console.
+	 * Returns the std i/o console.
 	 */
 	public static Console getConsole() return System.console
 
+	/**
+	 * Returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+	 */
+	public static native long getCurrentTimeMillis()
+			
 	/**
 	 * Prints the library information.
 	 */
