@@ -1,14 +1,23 @@
 package coda.lang
 
-import coda.io.IOInterface
+import coda.io.Console
 
 public class System {
 	
-	private static IOInterface standardIO = new IOInterface(null, null)
+	/**
+	 * The console variable. The stream variables are filled
+	 * in the native part of the library.
+	 */
+	private static Console console = new Console(null, null)
 			
 	/**
-	 * @return the std i/o.
+	 * @return the std i/o console.
 	 */
-	public static IOInterface getStandardIO() { return System.standardIO }
+	public static Console getConsole() return System.console
 
+	/**
+	 * Prints the library information.
+	 */
+	private static void main() System.getConsole().writeLine("Put this file into your libraries folder.")
+	
 }

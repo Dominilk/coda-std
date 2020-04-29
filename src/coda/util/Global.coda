@@ -1,0 +1,6 @@
+import coda.lang.System
+
+/**
+ * The global scope print() function.
+ */
+public static void print(string message) System.getConsole().writeLine(message)

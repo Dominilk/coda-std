@@ -1,0 +1,39 @@
+package coda.io
+
+import coda.io.Closeable
+import coda.io.InputStream
+
+public class Reader implements Closeable {
+	
+	private final InputStream inputStream = empty
+	
+	/**
+	 * Creates a reader reading from the given stream.
+	 */
+	public Reader(InputStream inputStream) {
+		this.inputStream = inputStream
+	}
+	
+	/**
+	 * Closes the underlying inputStream.
+	 */
+	public void close() this.getInputStream().close()
+	
+	/**
+	 * Reads a line from the underlying stream.
+	 */
+	public string readLine() return new string(this.getInputStream().readAll())
+	
+	/**
+	 * Returns true if there is a new line available.
+	 */
+	public boolean hasNextLine() return this.getInputStream().available() > 0
+	
+	/**
+	 * @return the inputStream
+	 */
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	
+}
