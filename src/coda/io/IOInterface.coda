@@ -2,8 +2,9 @@ package coda.io
 
 import coda.io.OutputStream
 import coda.io.InputStream
+import coda.io.Streamable
 
-public class IOInterface {
+public class IOInterface implements Streamable {
 	
 	private OutputStream outputStream = empty
 	private InputStream inputStream = empty

@@ -27,4 +27,16 @@ public class Console extends IOInterface {
 		this.getOutputStream().flush()
 	}
 	
+	/**
+	 * Returns the next line.
+	 */
+	public string readLine() {
+		return new string(this.getInputStream().readAll())
+	}
+	
+	/**
+	 * Returns true if a new line is available.
+	 */
+	public boolean hasLine() return this.getInputStream().available() > 0
+	
 }

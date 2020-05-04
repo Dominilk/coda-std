@@ -25,6 +25,37 @@ public class Reader implements Closeable {
 	public string readLine() return new string(this.getInputStream().readAll())
 	
 	/**
+	 * Reads the next integer.
+	 */
+	public int readInteger() return this.readLine().toInteger()
+	
+	/**
+	 * Reads the next long.
+	 */
+	public long readLong() return this.readLine().toLong()
+
+	/**
+	 * Reads the next boolean.
+	 */
+	public boolean readBoolean() return this.readLine().toBoolean()
+
+	/**
+	 * Reads the next char.
+	 */
+	public char readCharacter() return this.readLine().toCharacter()
+
+	/**
+	 * Reads the next double.
+	 */
+	public double readDouble() return this.readLine().toDouble()
+
+	/**
+	 * Reads the next double.
+	 */
+	public byte readByte() return this.readLine().toByte()
+
+	
+	/**
 	 * Returns true if there is a new line available.
 	 */
 	public boolean hasNextLine() return this.getInputStream().available() > 0

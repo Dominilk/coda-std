@@ -1,0 +1,31 @@
+package coda.util
+
+import coda.lang.System
+
+public class Date {
+	
+	private final long timePoint = empty
+	
+	
+	/**
+	 * 
+	 */
+	public Date() {
+		this(System.getCurrentTimeMills())
+	}
+	
+	/**
+	 * @param timePoint
+	 */
+	public Date(long timePoint) {
+		this.timePoint = timePoint
+	}
+	
+	/**
+	 * @return the timePoint
+	 */
+	public long getTimePoint() {
+		return timePoint;
+	}
+	
+}

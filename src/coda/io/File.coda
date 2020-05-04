@@ -1,0 +1,71 @@
+package coda.io
+
+import coda.io.Streamable
+import coda.io.InputStream
+import coda.io.OutputStream
+
+public class File implements Streamable {
+	
+	private final string path = empty
+	
+	/**
+	 * Creates a file with the given path.
+	 * @param path
+	 */
+	public File(string path) {
+		this.path = path
+	}
+	
+	/* Streaming related stuff */
+	
+	/**
+	 * Creates an outputStream for the file.
+	 */
+	public native OutputStream getOutputStream()
+	
+	/**
+	 * Creates an inputStream for the file.
+	 */
+	public native InputStream getInputStream()
+	
+	
+	/* Standard file operation related sutff */
+	
+	/**
+	 * Creates a file at the underlying path.
+	 */
+	public native void createFile()
+	
+	/**
+	 * Creates a directory at the underlying path.
+	 */
+	public native void createDirectory()
+	
+	/**
+	 * Returns true if the file exists.
+	 */
+	public native boolean exists()
+	
+	/**
+	 * Deletes the file or folder.
+	 */
+	public native void delete()
+	
+	/**
+	 * Returns the absolute path of the file.
+	 */
+	public native string getAbsolutePath()
+	
+	/**
+	 * Returns the path of the file
+	 */
+	public string getPath() {
+		return path;
+	}
+	
+	/**
+	 * Returns an array of files within each file is resembling a root directory.
+	 */
+	public static native array getRoots()
+	
+}
