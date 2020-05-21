@@ -43,6 +43,12 @@ public class File implements Streamable {
 	public native boolean isDirectory()
 	
 	/**
+	 * Returns all the sub files of the file.
+	 * Throws an IOException when file not a directory.
+	 */
+	public native array<File> listFiles()
+	
+	/**
 	 * Creates a file at the underlying path.
 	 */
 	public native void createFile()
@@ -66,6 +72,11 @@ public class File implements Streamable {
 	 * Returns the absolute path of the file.
 	 */
 	public native string getAbsolutePath()
+	
+	/**
+	 * Returns the name of the file.
+	 */
+	public native string getName()
 	
 	/**
 	 * Returns the path of the file
