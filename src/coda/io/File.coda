@@ -16,6 +16,8 @@ public class File implements Streamable {
 		this.path = path
 	}
 	
+	public string toString() return this.getPath()
+	
 	/* Streaming related stuff */
 	
 	/**
@@ -28,8 +30,17 @@ public class File implements Streamable {
 	 */
 	public native InputStream getInputStream()
 	
-	
 	/* Standard file operation related sutff */
+	
+	/**
+	 * Returns true if the file is not a directory.
+	 */
+	public boolean isFile() return !this.isDirectory()
+	
+	/**
+	 * Returns true if the file is a directory.
+	 */
+	public native boolean isDirectory()
 	
 	/**
 	 * Creates a file at the underlying path.
@@ -66,6 +77,6 @@ public class File implements Streamable {
 	/**
 	 * Returns an array of files within each file is resembling a root directory.
 	 */
-	public static native array getRoots()
+	public static native array<File> getRoots()
 	
 }
