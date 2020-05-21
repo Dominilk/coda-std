@@ -14,11 +14,8 @@ public interface OutputStream implements Closeable {
 	 * Writes all bytes into the {@link OutputStream}.
 	 * @param bytes
 	 */
-	public default void write(array bytes) {
-		assert bytes.getType() == "coda.lang.byte"
-		for(b : bytes) {
-			this.write(b)
-		}
+	public default void write(array<byte> bytes) {
+		for(b : bytes)this.write(b)
 	}
 	
 	/**

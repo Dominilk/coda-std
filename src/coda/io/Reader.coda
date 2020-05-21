@@ -9,6 +9,7 @@ public class Reader implements Closeable {
 	
 	/**
 	 * Creates a reader reading from the given stream.
+	 * @param inputStream
 	 */
 	public Reader(InputStream inputStream) {
 		this.inputStream = inputStream
@@ -42,7 +43,7 @@ public class Reader implements Closeable {
 	/**
 	 * Reads the next char.
 	 */
-	public char readCharacter() return this.readLine().toCharacter()
+	public char readCharacter() return this.getInputStream().read().toCharacter()
 
 	/**
 	 * Reads the next double.
@@ -54,7 +55,6 @@ public class Reader implements Closeable {
 	 */
 	public byte readByte() return this.readLine().toByte()
 
-	
 	/**
 	 * Returns true if there is a new line available.
 	 */

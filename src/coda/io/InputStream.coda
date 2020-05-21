@@ -16,7 +16,7 @@ public interface InputStream implements Closeable {
 	 * Reads all bytes of the stream.
 	 * @return all read bytes.
 	 */
-	public default array readAll() {
+	public default array<byte> readAll() {
 		array bytes = byte[this.available()]
 		
 		while(this.available() > 0) {

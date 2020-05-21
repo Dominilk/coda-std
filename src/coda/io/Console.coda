@@ -19,6 +19,11 @@ public class Console extends IOInterface {
 	 */
 	public void writeLine(string line) {
 		
+		if(line == null) {
+			this.writeLine("null")
+			return
+		}
+		
 		for(b : line.getBytes())this.getOutputStream().write(b)
 		
 		// Write a \n in order to make a new line.
