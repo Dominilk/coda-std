@@ -11,6 +11,10 @@ public interface OutputStream implements Closeable {
 	public void write(byte b)
 	
 	/**
+	 * 
+	 * ! This method is overriden when used in native parts for
+	 * performance reasons.
+	 * 
 	 * Writes all bytes into the {@link OutputStream}.
 	 * @param bytes
 	 */

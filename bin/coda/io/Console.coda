@@ -24,7 +24,7 @@ public class Console extends IOInterface {
 			return
 		}
 		
-		for(b : line.getBytes())this.getOutputStream().write(b)
+		this.getOutputStream().write(line.getBytes())
 		
 		// Write a \n in order to make a new line.
 		this.getOutputStream().write(10b)
