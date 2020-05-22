@@ -1,0 +1,41 @@
+package coda.io
+
+import coda.io.Closeable
+import coda.io.OutputStream
+
+public class Writer implements Closeable {
+	
+	private final OutputStream outputStream = empty
+	
+	/**
+	 * Creates a writer.
+	 * @param outputStream
+	 */
+	public Writer(OutputStream outputStream) {
+		this.outputStream = outputStream
+	}
+	
+	/**
+	 * Closes the underlying inputStream.
+	 */
+	public void close() this.getOutputStream().close()
+	
+	/**
+	 * Writes the given string.
+	 * @param str
+	 */
+	public void write(string str) this.getOutputStream().write(str.getBytes())
+	
+	/**
+	 * Flushes the underlying outputStream.
+	 */
+	public void flush() this.getOutputStream().flush()
+	
+	/**
+	 * @return the outputStream
+	 */
+	public OutputStream getOutputStream() {
+		return outputStream
+	}
+	
+}

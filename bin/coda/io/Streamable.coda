@@ -1,0 +1,18 @@
+package coda.io
+
+import coda.io.OutputStream
+import coda.io.InputStream
+
+public interface Streamable {
+	
+	/**
+	 * Returns the outputStream for the streamable.
+	 */
+	public OutputStream getOutputStream()
+	
+	/**
+	 * Returns the inputStream for the streamable.
+	 */
+	public InputStream getInputStream()
+	
+}

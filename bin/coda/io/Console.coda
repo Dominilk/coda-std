@@ -1,0 +1,47 @@
+package coda.io
+
+import coda.io.IOInterface
+import coda.io.OutputStream
+import coda.io.InputStream
+
+
+public class Console extends IOInterface {
+	
+	/**
+	 * Creates a console using the given streams.
+	 * @param outputStream
+	 * @param inputStream
+	 */
+	public Console(OutputStream outputStream, InputStream inputStream) super(outputStream, inputStream)
+	
+	/**
+	 * Writes the given line into the console.
+	 */
+	public void writeLine(string line) {
+		
+		if(line == null) {
+			this.writeLine("null")
+			return
+		}
+		
+		for(b : line.getBytes())this.getOutputStream().write(b)
+		
+		// Write a \n in order to make a new line.
+		this.getOutputStream().write(10b)
+		
+		this.getOutputStream().flush()
+	}
+	
+	/**
+	 * Returns the next line.
+	 */
+	public string readLine() {
+		return new string(this.getInputStream().readAll())
+	}
+	
+	/**
+	 * Returns true if a new line is available.
+	 */
+	public boolean hasLine() return this.getInputStream().available() > 0
+	
+}
