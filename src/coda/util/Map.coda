@@ -1,0 +1,7 @@
+package coda.util
+
+public interface Map<T, V> {
+	
+	
+	
+}

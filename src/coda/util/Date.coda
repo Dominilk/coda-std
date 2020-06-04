@@ -6,7 +6,6 @@ public class Date {
 	
 	private final long timePoint = empty
 	
-	
 	/**
 	 * 
 	 */

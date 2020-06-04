@@ -1,0 +1,109 @@
+package coda.util
+
+import coda.lang.ArgumentException
+import coda.util.List
+
+public class ArrayList<T> implements List<T> {
+
+	private array<T> array = null
+	private int size = 0
+			
+	/**
+	 * Creates an arrayList with the given capacity
+	 * as starting capacity.
+	 */
+	public ArrayList(int capacity) {
+		this.array = T[capacity]
+	}
+	
+	/**
+	 * Creates an arrayList with a starting capacity
+	 * of 10.
+	 */
+	public ArrayList() {
+		this(10)
+	}
+
+	/**
+	 * Overrides the method of coda.lang.Object
+	 */
+	public string toString() return this.toArray() + ""
+	
+	/**
+	 * Overrides the method of coda.util.List
+	 */
+	public T get(int index) return this.array.get(index)
+	
+	/**
+	 * Overrides the method of coda.util.List
+	 */
+	public void add(T item) {
+		this.checkSize()
+		
+		this.array.set(this.size, item)
+		
+		this.size += 1
+	}
+	
+	/**
+	 * Checks if the list can take one more element.
+	 */
+	private void checkSize() {
+		int length = this.array.getLength()
+		if(this.getSize() + 1 >= length)this.grow(length + 10);
+	}
+	
+	/**
+	 * Grows te underlying array to the given size.
+	 * @param size
+	 */
+	private void grow(int size) {
+		if(size <= this.getSize())throw new ArgumentException("Given size is smaller than current one.")
+		
+		this.array = this.array.copy(0, size)
+	}
+			
+	/**
+	 * Overrides the method of coda.util.List
+	 */
+	public T remove(int index) {
+		
+		int size = this.getSize()
+		
+		if(index >= size)throw new ArgumentException("Given index is out of bounds.")
+		
+		T item = this.get(index)
+		
+		array<T> updated = T[this.size = size - 1]
+				
+		for(int i = 0, i < index & i < updated.getLength(), i += 1)updated.set(i, this.array.get(i))
+		
+		for(int i = index, i < size & i < updated.getLength(), i += 1)updated.set(i, this.array.get(i + 1))
+		
+		this.array = updated
+		
+		return item
+	}
+	
+	/**
+	 * Overrides the method of coda.util.List
+	 */
+	public int getSize() return this.size
+	
+	/**
+	 * Overrides the method of coda.util.List
+	 */
+	public array<T> toArray() {
+		int size = this.getSize()
+		
+		if(size == 0)return T[0]
+				
+		return this.array.copy(0, size - 1)
+	}
+			
+	/**
+	 * Overrides the method of coda.util.Iterable
+	 */
+	public Iterator<T> iterator() this.toArray().iterator
+	
+}
