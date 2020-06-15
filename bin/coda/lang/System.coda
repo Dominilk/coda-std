@@ -19,7 +19,12 @@ public class System {
 	 * Returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 	 */
 	public static native long getCurrentTimeMillis()
-			
+	
+	/**
+	 * Returns the passed arguments.
+	 */
+	public static native array<string> getArguments()
+	
 	/**
 	 * Prints the library information.
 	 */

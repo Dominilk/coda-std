@@ -1,0 +1,49 @@
+package coda.util
+
+import coda.util.List
+import coda.util.Map
+import coda.util.ArrayList
+
+public class ArrayMap<T, V> implements Map<T, V> {
+	
+	protected class Element<T, V> {
+		
+		private final T key = empty
+		private final V value empty
+
+		/**
+		 * @param key
+		 * @param value
+		 */
+		public Element(T key, V value) {
+			this.key = key
+			this.value = value
+		}
+		
+		/**
+		 * Returns the key.
+		 */
+		public T getKey() {
+			return this.key
+		}
+		
+		/**
+		 * @return the value
+		 */
+		public V getValue() {
+			return this.value;
+		}
+		
+	}
+	
+	private List<Element> elements = empty
+	
+			
+	/**
+	 * @return the elements
+	 */
+	public List<Element> getElements() {
+		return elements;
+	}
+	
+}

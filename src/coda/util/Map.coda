@@ -2,6 +2,42 @@ package coda.util
 
 public interface Map<T, V> {
 	
+	/**
+	 * Returns true if the given key is contained.
+	 */
+	public boolean containsKey(T key)
 	
+	/**
+	 * Returns true if the given value is contained.
+	 */
+	public boolean containsValue(V value)
+	
+	/**
+	 * Removes and returns the value
+	 * associated with the given key.
+	 */
+	public V remove(T key)
+	
+	/**
+	 * Puts the given value at the given key and
+	 * returns the value previously associated
+	 * with the given key.
+	 */
+	public V put(T key, V value)
+	
+	/**
+	 * Returns the size of the map.
+	 */
+	public int getSize()
+	
+	/**
+	 * Returns all the keys of the map.
+	 */
+	public array<T> getKeys()
+	
+	/**
+	 * Returns all the values of the map.
+	 */
+	public array<V> getValues()
 	
 }
