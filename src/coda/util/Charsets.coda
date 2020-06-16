@@ -12,7 +12,7 @@ public class Charsets {
 	 * @param source
 	 * @param charset
 	 */
-	public static native byte convert(byte source, string charset) {
+	public static byte convert(byte source, string charset) {
 		return Charsets.convert(source.toCharacter().toString(), charset).get(0)
 	}
 }
