@@ -6,7 +6,7 @@ public class Charsets {
 	 * @param source
 	 * @param charset
 	 */
-	public static native byte[] convert(string source, string charset)
+	public static native array<byte> convert(string source, string charset)
 	
 	/**
 	 * @param source
