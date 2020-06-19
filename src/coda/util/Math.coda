@@ -2,4 +2,129 @@ package coda.util
 
 public class Math {
 	
+	public static final double PI = 3.141592653589793D
+	public static final double PI = 2.718281828459045
+					
+	
+	/**
+	 * Returns the smallest value out of the given one or -1 if there are no values available.
+	 * @param values
+	 */
+	public static double min(array<double> values) {
+		if(values.getLength() >= 1) {
+			double min = values.get(0)
+			
+			for(int i = 1, i < values.getLength(), i += 1) {
+				double value = values.get(i)
+						
+				if(values != null & value < min) min = value
+			}
+			
+			return max
+		}else -1
+	}
+	
+	/**
+	 * Returns the highest value out of the given one or -1 if there are no values available.
+	 * @param values
+	 */
+	public static double max(array<double> values) {
+		if(values.getLength() >= 1) {
+			
+			double max = values.get(0)
+			
+			for(int i = 1, i < values.getLength(), i += 1) {
+				double value = values.get(i)
+				
+				if(value != null & value > max) max = value
+			}
+			
+			return max
+		}else -1
+	}
+	
+	/**
+	 * Returns the absolute value of the given double.
+	 * @param d
+	 */
+	public static double abs(double d) return d < 0 ? d * -1 : d
+			
+	/**
+	 * Rounds the given double up.
+	 * @param d
+	 */
+	public static native int ceil(double d)
+	
+	/**
+	 * Rounds the given double down.
+	 * @param d
+	 */
+	public static native int floor(double d)
+		
+	/**
+	 * Rounds the given double.
+	 * @param d
+	 */
+	public static int round(double d) {
+		return Math.floor(d + 0.5D)
+	}
+	
+	/**
+	 * Converts the given degrees into radians and returns them.
+	 * @param degrees
+	 */
+	public static double toRadians(double degrees) {
+		return degrees * Math.PI / 180
+	}
+	
+	/**
+	 * Converts the given radians into degrees and returns them.
+	 * @param radians
+	 */
+	public static double toDegrees(double radians) {
+		return radians * 180 / Math.PI
+	}
+	
+	/**
+	 * Returns the first parameter to the power of the second.
+	 * @param d
+	 */
+	public static native double pow(double x, double y)
+			
+	/**
+	 * Returns the cosine of the given value.
+	 * @param d
+	 */
+	public static native double cos(double d)
+	
+	/**
+	 * Returns the sinus of the given value.
+	 * @param d
+	 */
+	public static native double sin(double d)
+	
+	/**
+	 * Returns the tan of the given value.
+	 * @param d
+	 */
+	public static native double tan(double d)
+	
+	/**
+	 * Returns the arc-cosine of the given value.
+	 * @param d
+	 */
+	public static native double arcCos(double d)
+	
+	/**
+	 * Returns the arc-sinus of the given value.
+	 * @param d
+	 */
+	public static native double arcSin(double d)
+	
+	/**
+	 * Returns the arc-tan of the given value.
+	 * @param d
+	 */
+	public static native double arcTan(double d)
+	
 }

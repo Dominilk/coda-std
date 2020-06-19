@@ -15,4 +15,5 @@ public class Charsets {
 	public static byte convert(byte source, string charset) {
 		return Charsets.convert(source.toCharacter().toString(), charset).get(0)
 	}
+	
 }
