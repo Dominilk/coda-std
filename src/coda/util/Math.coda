@@ -17,7 +17,7 @@ public class Math {
 			for(int i = 1, i < values.getLength(), i += 1) {
 				double value = values.get(i)
 						
-				if(values != null & value < min) min = value
+				if(value != null & value < min) min = value
 			}
 			
 			return max

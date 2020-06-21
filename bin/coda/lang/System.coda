@@ -16,6 +16,16 @@ public class System {
 	public static Console getConsole() return System.console
 
 	/**
+	 * Executes the given command.
+	 */
+	public static native void system(string command)
+			
+	/**
+	 * Exits with the given code.
+	 */
+	public static native void exit(int code)
+	
+	/**
 	 * Returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.
 	 */
 	public static native long getCurrentTimeMillis()
