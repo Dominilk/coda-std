@@ -11,7 +11,7 @@ public class ArrayMap<T, V> implements Map<T, V> {
 	protected class Element<T, V> {
 		
 		private final T key = empty
-		private final V value empty
+		private final V value = empty
 
 		/**
 		 * @param key
@@ -100,6 +100,7 @@ public class ArrayMap<T, V> implements Map<T, V> {
 	 */
 	public void put(T key, V value) {
 		if(key == null)throw new UnsupportedOperationException("Can not put null-key into map.")
+		this.getElements().add(new Element(key, value))
 	}
 	
 	/**

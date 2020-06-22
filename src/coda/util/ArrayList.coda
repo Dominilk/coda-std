@@ -97,7 +97,7 @@ public class ArrayList<T> implements List<T> {
 		int size = this.getSize()
 		
 		if(size == 0)return T[0]
-				
+		
 		return this.array.copy(0, size - 1)
 	}
 			
