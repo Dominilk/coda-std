@@ -18,24 +18,24 @@ public class ArrayList<T> implements List<T> {
 	
 	/**
 	 * Creates an arrayList with a starting capacity
-	 * of 10.
+	 * from 10.
 	 */
 	public ArrayList() {
 		this(10)
 	}
 
 	/**
-	 * Overrides the method of coda.lang.Object
+	 * Overrides the method from coda.lang.Object
 	 */
 	public string toString() return this.toArray() + ""
 	
 	/**
-	 * Overrides the method of coda.util.List
+	 * Overrides the method from coda.util.List
 	 */
 	public T get(int index) return this.array.get(index)
 	
 	/**
-	 * Overrides the method of coda.util.List
+	 * Overrides the method from coda.util.List
 	 */
 	public void add(T item) {
 		this.checkSize()
@@ -64,13 +64,13 @@ public class ArrayList<T> implements List<T> {
 	}
 			
 	/**
-	 * Overrides the method of coda.util.List
+	 * Overrides the method from coda.util.List
 	 */
 	public T remove(int index) {
 		
 		int size = this.getSize()
 		
-		if(index >= size)throw new ArgumentException("Given index is out of bounds.")
+		if(index >= size)throw new ArgumentException("Given index is out from bounds.")
 		
 		T item = this.get(index)
 		
@@ -86,12 +86,12 @@ public class ArrayList<T> implements List<T> {
 	}
 	
 	/**
-	 * Overrides the method of coda.util.List
+	 * Overrides the method from coda.util.List
 	 */
 	public int getSize() return this.size
 	
 	/**
-	 * Overrides the method of coda.util.List
+	 * Overrides the method from coda.util.List
 	 */
 	public array<T> toArray() {
 		int size = this.getSize()
@@ -102,8 +102,8 @@ public class ArrayList<T> implements List<T> {
 	}
 			
 	/**
-	 * Overrides the method of coda.util.Iterable
+	 * Overrides the method from coda.util.Iterable
 	 */
-	public Iterator<T> iterator() this.toArray().iterator
+	public Iterator<T> iterator() return this.toArray().iterator
 	
 }

@@ -4,17 +4,20 @@ public interface Map<T, V> {
 	
 	/**
 	 * Returns true if the given key is contained.
+	 * @param key
 	 */
 	public boolean containsKey(T key)
 	
 	/**
 	 * Returns true if the given value is contained.
+	 * @param value
 	 */
 	public boolean containsValue(V value)
 	
 	/**
-	 * Removes and returns the value
+	 * Removes all and returns the last value
 	 * associated with the given key.
+	 * @param key
 	 */
 	public V remove(T key)
 	
@@ -22,8 +25,16 @@ public interface Map<T, V> {
 	 * Puts the given value at the given key and
 	 * returns the value previously associated
 	 * with the given key.
+	 * @param key
+	 * @param value
 	 */
 	public V put(T key, V value)
+	
+	/**
+	 * Returns the value associated with the given key.
+	 * @param key
+	 */
+	public V get(T key)
 	
 	/**
 	 * Returns the size of the map.

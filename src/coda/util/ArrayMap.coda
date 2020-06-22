@@ -1,5 +1,7 @@
 package coda.util
 
+import coda.lang.UnsupportedOperationException
+
 import coda.util.List
 import coda.util.Map
 import coda.util.ArrayList
@@ -38,11 +40,101 @@ public class ArrayMap<T, V> implements Map<T, V> {
 	
 	private List<Element> elements = empty
 	
+	/**
+	 * Creates a new ArrayMap.
+	 */
+	public ArrayMap() {
+		this.elements = new ArrayList<Element>()
+	}
 			
+	/**
+	 * Returns the element having the given key or null.
+	 * @param key
+	 */
+	private Element getElement(T key) {
+		for(e, this.getElements()) {
+			if(e.getKey() == key)return e
+		}
+		return null
+	}
+			
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public V get(T key) {
+		Element e = this.getElement(key)
+		if(e != null)return e.getValue()
+		else return null
+	}
+			
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public boolean containsKey(T key) {
+		return this.get(key) != null
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public boolean containsValue(T value) {
+		for(e, this.getElements()) {
+			if(e.getValue() == value)return true
+		}
+		return false
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public V remove(T key) {
+		V removed = null
+		
+		while(this.containsKey(key))removed = this.getElements().remove(this.getElement(key))
+		
+		return removed
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public void put(T key, V value) {
+		if(key == null)throw new UnsupportedOperationException("Can not put null-key into map.")
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public int getSize() return this.getElements().getSize()
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public array<T> getKeys() {
+		final array<T> keys = T[this.getSize()]
+		final List<Element> elements = this.getElements()
+			
+		for(int i = 0, i < keys.getLength(), i += 1)keys.set(i, elements.get(i).getKey())
+		
+		return keys
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Map
+	 */
+	public array<V> getValues() {
+		final array<T> values = T[this.getSize()]
+		final List<Element> elements = this.getElements()
+					
+		for(int i = 0, i < values.getLength(), i += 1)values.set(i, elements.get(i).getValue())
+				
+		return values
+	}
+	
 	/**
 	 * @return the elements
 	 */
-	public List<Element> getElements() {
+	private List<Element> getElements() {
 		return elements;
 	}
 	
