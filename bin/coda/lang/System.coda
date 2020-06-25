@@ -36,6 +36,25 @@ public class System {
 	public static native array<string> getArguments()
 	
 	/**
+	 * Returns the property with the given name.
+	 * @param name
+	 */
+	public static native string getProperty(string name)
+	
+	/**
+	 * Sets the given value to the property with the given name.
+	 * @param name
+	 * @param value
+	 */
+	public static native void setProperty(string name, string value)
+
+	/**
+	 * Returns the environemt variable with the given name.
+	 * @param name
+	 */
+	public static native string getEnvironment(string name)
+	
+	/**
 	 * Prints the library information.
 	 */
 	private static void main() System.getConsole().writeLine("Put this file into your libraries folder.")
