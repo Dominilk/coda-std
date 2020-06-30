@@ -1,8 +1,9 @@
 package coda.util
 
 import coda.util.Iterable
+import coda.util.Stack
 
-public interface List<T> implements Iterable<T> {
+public interface List<T> implements Iterable<T>, Stack<T> {
 	
 	/**
 	 * Returns the item at the given index.
@@ -43,7 +44,6 @@ public interface List<T> implements Iterable<T> {
 		return this.getIndex(item) != null
 	}
 	
-	
 	/**
 	 * Returns the size of the list.
 	 */
@@ -53,5 +53,24 @@ public interface List<T> implements Iterable<T> {
 	 * Converts the list to an array.
 	 */
 	public array<T> toArray()
+	
+	/**
+	 * Returns true if the list is empty.
+	 */
+	public default boolean isEmpty() return this.getSize() == 0
+	
+	/**
+	 * Overrides the method from coda.util.Stack
+	 */
+	public default void push(T item) {
+		this.add(item)
+	}
+	
+	/**
+	 * Overrides the method from coda.util.Stack
+	 */
+	public default T pop() {
+		return this.remove(this.getSize() - 1)
+	}
 	
 }
