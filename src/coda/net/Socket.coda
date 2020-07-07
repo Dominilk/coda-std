@@ -1,0 +1,173 @@
+package coda.net
+
+import coda.io.Streamable
+import coda.io.OutputStream
+import coda.io.InputStream
+
+public class Socket implements Streamable {
+	
+	private Object session = empty
+	
+	/**
+	 * Creates a socket with the given hostname/port.
+	 * @param hostname
+	 * @param port
+	 */
+	public Socket(string hostname, int port) {
+		this.initialize(hostname, port)
+	}
+	
+	/**
+	 * Initializes the socket with the given data.
+	 * @param hostname
+	 * @param port
+	 */
+	private native void initialize(string hostname, int port)
+	
+	/**
+	 * Returns true if the socket is connected.
+	 */
+	public boolean isConnected() return this.session.isConnected()
+	
+	/**
+	 * Returns true if the socket is closed.
+	 */
+	public boolean isClosed() return this.session.isClosed()
+	
+	/**
+	 * Returns true if the socket is bound.
+	 */
+	public boolean isBound() return this.session.isBound()
+	
+	/**
+	 * Connects the socket.
+	 */
+	public void connect() this.session.connect()
+	
+	/**
+	 * Closes the socket.
+	 */
+	public void close() this.session.close()
+	
+	/**
+	 * Returns the {@link InputStream} of the socket.
+	 */
+	public InputStream getInputStream() {
+		return this.session.getInputStream()
+	}
+	
+	/**
+	 * Returns the {@link OutputStream} of the socket.
+	 */
+	public OutputStream getOutputStream() {
+		return this.session.getOutputStream()
+	}
+	
+	/**
+	 * Returns true if OOB is inline.
+	 */
+	public boolean isOOBInline() return this.session.isOOBInline()
+	
+	/**
+	 * Sets or unsets OOB inline.
+	 * @param inline
+	 */
+	public void setOOBInline(boolean inline) this.session.setOOBInline(inline)
+	
+	/**
+	 * Returns true if option tcp-no-delay is enabled.
+	 */
+	public boolean isTcpNoDelay() return this.session.isTcpNoDelay()
+	
+	/**
+	 * Sets the tcp-no-delay option.
+	 * @param noDelay
+	 */
+	public void setTcpNoDelay(boolean noDelay) this.session.setTcpNoDleay(noDelay)
+	
+	/**
+	 * Returns true if the option keep-alive is enabled.
+	 */
+	public boolean isKeepAlive() return this.session.isKeepAlive()
+	
+	/**
+	 * Sets the keep-alive option.
+	 * @param keepAlive
+	 */
+	public void setKeepAlive(boolean keepAlive) this.session.setKeepAlive(keepAlive)
+	
+	/**
+	 * Returns true if the input has been shutdown.
+	 */
+	public boolean isInputShutdown() return this.session.isInputShutdown()
+	
+	/**
+	 * Shuts down the input.
+	 */
+	public void shutdownInput() this.session.shutdownInput()
+	
+	/**
+	 * Returns true if the output has been shutdown.
+	 */
+	public boolean isOutputShutdown() return this.session.isOutputShutdown()
+	
+	/**
+	 * Shuts down the output.
+	 */
+	public void shutdownOutput() this.session.shutdownOutput()
+	
+	/**
+	 * Returns the timeout.
+	 */
+	public int getSoTimeout() return this.session.getSoTimeout()
+	
+	/**
+	 * Sets the timeout.
+	 * @param timeout
+	 */
+	public void setSoTimeout(int timeout) this.session.setSoTimeout(timeout)
+	
+	/**
+	 * Returns the linger.
+	 */
+	public int getSoLinger() return this.session.getSoLinger()
+
+	/**
+	 * Sets the timeout.
+	 * @param on
+	 * @param linger
+	 */
+	public void setSoLinger(boolean on, int linger) this.session.setSoLinger(on, linger)
+	
+	/**
+	 * Returns the size of the receive buffer.
+	 */
+	public int getReceiveBufferSize() return this.session.getReceiveBufferSize()
+	
+	/**
+	 * Sets the size of the receive buffer.
+	 */
+	public void setReceiveBufferSize(int size) this.session.setReceiveBufferSize(size)
+	
+	/**
+	 * Returns the size of the send buffer.
+	 */
+	public int getSendBufferSize() return this.session.getSendBufferSize()
+
+	/**
+	 * Sets the size of the send buffer.
+	 */
+	public void setSendBufferSize(int size) this.session.setSendBufferSize(size)
+	
+	/**
+	 * Returns the traffic class.
+	 */
+	public int getTrafficClass() return this.session.getTrafficClass()
+
+	/**
+	 * Sets the traffic class
+	 * @param trafficClass
+	 */
+	public void setReceiveBufferSize(int trafficClass) this.session.setTrafficClass(trafficClass)
+	
+}

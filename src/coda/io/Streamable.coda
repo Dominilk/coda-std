@@ -2,8 +2,9 @@ package coda.io
 
 import coda.io.OutputStream
 import coda.io.InputStream
+import coda.io.Closeable
 
-public interface Streamable {
+public interface Streamable implements Closeable {
 	
 	/**
 	 * Returns the outputStream for the streamable.
@@ -14,5 +15,13 @@ public interface Streamable {
 	 * Returns the inputStream for the streamable.
 	 */
 	public InputStream getInputStream()
+	
+	/**
+	 * Overrides the method from coda.io.Closeable
+	 */
+	public default void close() {
+		this.getInputStream().close()
+		this.getOutputStream().close()
+	}
 	
 }

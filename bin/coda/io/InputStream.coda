@@ -1,7 +1,5 @@
 package coda.io
 
-import java.lang.reflect.Array;
-
 import coda.io.Closeable
 
 public interface InputStream implements Closeable {
@@ -27,7 +25,7 @@ public interface InputStream implements Closeable {
 	}
 	
 	/**
-	 * @return the amount of available bytes in the stream.S
+	 * @return the amount of available bytes in the stream.
 	 */
 	public int available()
 	

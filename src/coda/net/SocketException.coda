@@ -1,0 +1,13 @@
+package coda.net
+
+import coda.lang.Exception
+
+public class SocketException extends Exception {
+	
+	/**
+	 * Creates a {@link SocketException}.
+	 * @param message
+	 */
+	public SocketException(string message) { super(message) }
+	
+}
