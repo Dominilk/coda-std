@@ -33,7 +33,7 @@ public class Console extends IOInterface {
 	 * @param content
 	 */
 	public void write(string content) {
-		this.getOutputStream().write(line.getBytes())
+		this.getOutputStream().write(content.getBytes())
 		this.getOutputStream().flush()
 	}
 	
