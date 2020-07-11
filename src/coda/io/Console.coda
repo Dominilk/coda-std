@@ -16,6 +16,7 @@ public class Console extends IOInterface {
 	
 	/**
 	 * Writes the given line into the console.
+	 * @param line
 	 */
 	public void writeLine(string line) {
 		
@@ -24,11 +25,15 @@ public class Console extends IOInterface {
 			return
 		}
 		
+		this.write(line + "\n")
+	}
+	
+	/**
+	 * Writes the given content.
+	 * @param content
+	 */
+	public void write(string content) {
 		this.getOutputStream().write(line.getBytes())
-		
-		// Write a \n in order to make a new line.
-		this.getOutputStream().write(10b)
-		
 		this.getOutputStream().flush()
 	}
 	

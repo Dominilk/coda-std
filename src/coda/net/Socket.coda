@@ -6,6 +6,9 @@ import coda.io.InputStream
 
 public class Socket implements Streamable {
 	
+	private string hostname = empty
+	private int port = empty
+	
 	private Object session = empty
 	
 	/**
@@ -14,6 +17,8 @@ public class Socket implements Streamable {
 	 * @param port
 	 */
 	public Socket(string hostname, int port) {
+		this.hostname = hostname
+		this.port = port
 		this.initialize(hostname, port)
 	}
 	
@@ -23,6 +28,20 @@ public class Socket implements Streamable {
 	 * @param port
 	 */
 	private native void initialize(string hostname, int port)
+	
+	/**
+	 * @return the hostname
+	 */
+	public string getHostname() {
+		return hostname;
+	}
+	
+	/**
+	 * @return the port
+	 */
+	public int getPort() {
+		return port;
+	}
 	
 	/**
 	 * Returns true if the socket is connected.
