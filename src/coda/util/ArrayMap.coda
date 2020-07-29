@@ -123,7 +123,7 @@ public class ArrayMap<T, V> implements Map<T, V> {
 	/**
 	 * Overrides the method from coda.util.Map
 	 */
-	public array<T> getKeys() {
+	public array<T> getKeys() {
 		final array<T> keys = T[this.getSize()]
 		final List<Element> elements = this.getElements()
 			

@@ -1,0 +1,32 @@
+package coda.net
+
+public class SocketAddress {
+	
+	private final string hostname = empty
+	private final int port = empty
+	;
+	
+	/**
+	 * @param hostname
+	 * @param port
+	 */
+	public SocketAddress(string hostname, int port) {
+		this.hostname = hostname
+		this.port = port
+	}
+	
+	/**
+	 * @return the hostname
+	 */
+	public string getHostname() {
+		return hostname;
+	}
+	
+	/**
+	 * @return the port
+	 */
+	public int getPort() {
+		return port;
+	}
+	
+}

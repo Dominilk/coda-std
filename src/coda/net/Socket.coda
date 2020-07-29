@@ -1,25 +1,23 @@
 package coda.net
 
+import coda.net.SocketAddress
+
 import coda.io.Streamable
 import coda.io.OutputStream
 import coda.io.InputStream
 
 public class Socket implements Streamable {
 	
-	private string hostname = empty
-	private int port = empty
-	
+	private SocketAddress address = empty
 	private Object session = empty
 	
 	/**
-	 * Creates a socket with the given hostname/port.
-	 * @param hostname
-	 * @param port
+	 * Creates a socket with the given address.
+	 * @param address
 	 */
-	public Socket(string hostname, int port) {
-		this.hostname = hostname
-		this.port = port
-		this.initialize(hostname, port)
+	public Socket(SocketAddress address) {
+		this.address = address
+		this.initialize(address.getHostname(), address.getPort())
 	}
 	
 	/**
@@ -30,17 +28,10 @@ public class Socket implements Streamable {
 	private native void initialize(string hostname, int port)
 	
 	/**
-	 * @return the hostname
+	 * @return the address
 	 */
-	public string getHostname() {
-		return hostname;
-	}
-	
-	/**
-	 * @return the port
-	 */
-	public int getPort() {
-		return port;
+	public SocketAddress getAddress() {
+		return address;
 	}
 	
 	/**
@@ -183,10 +174,4 @@ public class Socket implements Streamable {
 	 */
 	public int getTrafficClass() return this.session.getTrafficClass()
 
-	/**
-	 * Sets the traffic class
-	 * @param trafficClass
-	 */
-	public void setReceiveBufferSize(int trafficClass) this.session.setTrafficClass(trafficClass)
-	
 }
